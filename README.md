@@ -1,1 +1,1 @@
-Stochastik-Zusammenfassung
+Einführung in die Stochastik Zusammenfassung
