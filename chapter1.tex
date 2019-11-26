@@ -1,3 +1,70 @@
-\begin{karte}{TEST}
-	Inhalt...
+\section*{Deskriptive Statistik}
+
+\begin{karte}{Der Grundraum}
+	Der \textit{Grundraum} ist eine Menge $\Omega \neq \emptyset$ (auch Grundgesamtheit, Merkmalsraum, Stichprobenraum). \\
+	\textbf{Annahme:} $\Omega$ sei diskret (d.h. entweder endlich oder abzählbar unendlich), oft $\Omega \subset \R$.
+\end{karte}
+
+\begin{karte}{Absolute und relative Häufigkeiten}
+	Seien $x_1,\dotsc,x_n \in \Omega$ für ein $n \in \N$ (z.B. Daten, Beobachtungen). Für $\omega \in \Omega$ sei
+	\[h(\omega):=\abs{\set{j \in [ n ] \;|\; x_j=\omega }} \]
+	die \textit{absolute Häufigkeit} von $\omega$. Es gilt:
+	\[\sum_{\omega \in \Omega}^{} h(\omega) = n\]
+	Die Zahl $\frac{1}{n}h(\omega)$ heißt \textit{relative Häufigkeit} (mit Bezug auf die Daten $x_1,\dotsc,x_n$). Für $A \subset \Omega$ heißen
+	\[h(A):=\abs{\set{j \in [n] \;|\; x_j \in A}} = \sum_{\omega \in A} h(\omega) \text{ und } \frac{1}{n} h(A) \]
+	\textit{absolute} bzw. \textit{relative Häufigkeiten von} $A$.
+\end{karte}
+
+\begin{karte}{Histogramme}
+	Seien $x_1,\dotsc,x_n \in \Omega \subset \R$ und $b_1\le\dotsc\le b_{s+1}$ für ein $s \in \N$ mit $\displaystyle b_1 \leq \min_{j \in [n]} x_j$, $\displaystyle b_{s+1} \ge \max_{j \in [n]} x_j$. Setze $k_j:=h([b_j, b_{j+1})) = \abs{\set{i \in [n] \;|\; b_j \leq x_i \leq b_{j+1}}}$. Es gilt $\displaystyle \sum_{j=1}^{s} k_j = n$.
+	%FEHLT: Grafik Histogramm. 
+\end{karte}
+
+\begin{karte}{Lagemaße}
+	Seien $x_1,\dotsc,x_n \in \R$. Ein \textit{Lagemaß} ist eine Funktion $\abb{l}{\R^n}{\R}$ mit 
+	\[l(x_1+a,\dotsc,x_n+a) = l(x_1,\dotsc,x_n)+a \qquad \forall x_1,\dotsc,x_n \in \R, a \in \R\]
+	
+\end{karte}
+
+\begin{karte}{Arithmetisches Mittel}
+	Das \textit{arithmetische Mittel} (Schwerpunkt) von $x_1,\dotsc,x_n \in \R$ ist \[ \overline{x} := \frac{1}{n}\sum_{j=1}^{n} x_j \quad (= l(x_1,\dotsc,x_n))\].
+	
+	Es ist $\displaystyle \sum_{j=1}^{n} (x_j-\overline{x})^2 = 
+	\min_{t \in \R} \sum_{j=1}^{n} (x_j-t)^2$.
+\end{karte}
+\begin{karte}{Median und Quantile}
+	Seien $x_1,\dotsc,x_n \in \R$. Durch Sortieren erhält man $ x_{(1)},\dotsc,x_{(n)}$ mit $\set{x_1,\dotsc,x_n} = \set{x_{(1)},\dotsc,x_{(n)}}$. Der \textit{Median} von $x_1,\dotsc,x_n$ ist dann
+	\[x_{1/2}:= \begin{cases}
+	x_{(\frac{n+1}{2})} & \quad \text{falls } n \text{ ungerade} \\
+	\frac{1}{2}(x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}) & \quad \text{falls } n \text{ gerade}
+	\end{cases}\]
+	Es gilt $\displaystyle \sum_{j=1}^{n} \abs{x_j - x_{1/2}} = \min_{t \in \R} \sum_{j=1}^{n} \abs{x_j-t}$. \\
+	Sei $0 \le p \le 1$. Die Zahl
+	\[x_p:= \begin{cases}
+	x_{(\lfloor np+1 \rfloor)} & \quad \text{falls } np \notin \N \\
+	\frac{1}{2}(x_{(np)}+x_{(np+1)}) & \quad \text{falls } np \in \N
+	\end{cases}\] heißt $p$-\textit{Quantil}. Es sind mindestens $p\cdot 100 \% $ aller $x_j \leq x_p$, mindestens $(1-p)\cdot 100 \%$ aller $x_j \geq x_p$.
+\end{karte}
+
+\begin{karte}{Streuungsmaße}
+	Ein \textit{Streuungsmaß} ist eine Funktion $\abb{\sigma}{\R^n}{\R}$ mit \[\sigma(x_1+a,\dotsc,x_n+a) = \sigma(x_1,\dotsc,x_n) \qquad \forall x_1,\dotsc,x_n \in \R, a \in \R\]
+	Wichtige Streuungsmaße sind z.B.
+	\begin{itemize}
+		\item \textit{empirische Varianz}: $\displaystyle s^2:=\frac{1}{n-1} \sum_{j=1}^{n} (x_j-\overline{x})^2$
+		\item \textit{empirische Standardabweichung}: $s :=+\sqrt{s^2}$
+		\item \textit{Spannweite}: $x_{(n)}-x_{(1)}$
+		\item \textit{Quartilsabstand}: $x_{\frac{3}{4}}-x_{\frac{1}{4}}$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Empirische Korrelationskoeffizienten}
+	Gegeben seien bivariate Daten $(x_j,y_j) \in \R^2$, $j \in \set{1,\dotsc,n}$. \\
+	Gesucht ist eine Gerade $y=a^{\ast}x+b^{\ast}$ mit $\displaystyle \sum_{j=1}^{n} (y_j-a-bx_j)^2$ minimal. \\
+	Setze 
+	\[\sigma_x^2 := \frac{1}{n} \sum_{j=1}^{n} (x_j-\overline{x})^2 \qquad \sigma_y^2 := \frac{1}{n} \sum_{j=1}^{n} (y_j-\overline{y})^2\] \[\sigma_{x,y} := \frac{1}{n} \sum_{j=1}^{n} (x_j-\overline{x})(y_j-\overline{y}) \qquad r_{xy} :=\frac{\sigma_{x,y}}{\sigma_x \sigma_y} \text{,}\]
+	wobei $\sigma_{x,y}$ die \textit{empirische Kovarianz} und $r_{xy}$ der \textit{empirische Korrelationskoeffizient} ist. \\
+	Für $a^\ast$ und $b^\ast$ gilt dann
+	\[a^\ast = \overline{y}-b\overline{x} \qquad b^\ast = \frac{\sigma_{x,y}}{\sigma_x^2}\] und es ist
+	$\displaystyle \sum_{j=1}^{n} (y_j-a-bx_j)^2 = n\sigma_y^2(1-r_{xy}^2)$.
+	
 \end{karte}
