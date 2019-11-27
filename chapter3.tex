@@ -1,0 +1,48 @@
+\section*{Diskrete Wahrscheinlichkeitsräume}
+
+\begin{karte}{Diskreter Wahrscheinlichkeitsraum}
+	Ein Paar $(\Omega, \P)$ heißt \textit{diskreter Wahrscheinlichkeitsraum (W-Raum)}, falls $\Omega$ eine diskrete Menge ist und $\abb{\P}{\PO(\Omega)}{\R}$ eine Abbildung mit den folgenden Eigenschaften:
+	\begin{itemize}
+		\item[(P1)] $\P(A) \geq 0 \quad \forall A \subset \Omega$
+		\item[(P2)] $\P(\Omega) = 1 \qquad$ (Normierungsbedingung)
+		\item[(P3)] $\displaystyle \P(\bigcup_{j=1}^{\infty} A_j) = \sum_{j=1}^{\infty} \P(A_j) \quad \forall (A_n)_{n \in \N} \subset \Omega \text{ mit } \forall i\neq j: A_i \cap A_j = \emptyset \qquad$ ($\sigma$-Additivität)
+	\end{itemize}
+	Man nennt $\P(A)$ die \textit{Wahrscheinlichkeit} von $A$ und $\P$ \textit{Wahrscheinlichkeitsmaß} auf $\Omega$.
+\end{karte}
+
+\begin{karte}{Wichtige Eigenschaften von W-Maßen}
+	\begin{itemize}
+		\item $\P(\emptyset)=0$
+		\item $\displaystyle \P(\bigcup_{j=1}^{n} A_j) = \sum_{j=1}^{n} \P(A_j) \quad \text{ falls } \forall i\neq j: A_i \cap A_j = \emptyset$ (endliche Additivität)
+		\item $0 \leq \P(A) \leq 1 \quad \forall A \subset \Omega, \quad \P(A^C) = 1-\P(A) \quad \forall A \subset \Omega$
+		\item $A \subset B \subset \Omega \implies \P(A) \leq \P(B) \qquad$ (Monotonie)
+		\item $\P(A \cup B) = \P(A)+\P(B)-\P(A \cap B) \quad \forall A,B \subset \Omega$
+		\item $\displaystyle \P(\bigcup_{j=1}^{\infty} A_j) \leq \sum_{j=1}^{\infty} \P(A_j) \quad \forall (A_n)_{n \in \N} \subset \Omega \qquad$ ($\sigma$-Subadditivität)
+		\item $\displaystyle A_n \subset A_{n+1} \; \forall n \in \N \implies \P(\bigcup_{n=1}^{\infty} A_n) = \limes{n} \P(\bigcup_{j=1}^{n} A_j) = \limes{n} \P(A_n)$
+		\item $\displaystyle A_n \supset A_{n+1} \; \forall n \in \N \implies \P(\bigcap_{n=1}^{\infty} A_n) = \limes{n} \P(\bigcap_{j=1}^{n} A_j) = \limes{n} \P(A_n)$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Wahrscheinlichkeitsfunktionen}
+	Sei $(\Omega, \P)$ ein diskreter W-Raum. Die Funktion $\abb{p}{\Omega}{\R},\; \omega \mapsto \P(\set{\omega})$ heißt \textit{Wahrscheinlichkeitsfunktion}. Es gilt
+	$$ \P(A) = \sum_{\omega \in A} p(\omega) \quad \forall A \subset \Omega$$
+	Sei dagegen $\Omega$ diskret und $\abb{p}{\Omega}{[0,1]}$ mit $\displaystyle \sum_{\omega \in \Omega} p(\omega) = 1$, so definiert
+	$$ \P(A) := \sum_{\omega \in A} p(\omega) \quad \forall A \subset \Omega$$ ein Wahrscheinlichkeitsmaß auf $\Omega$.
+\end{karte}
+
+\begin{karte}{Gleichverteilung}
+	Für einen diskreten W-Raum $(\Omega,\P)$ gelte $\abs{\Omega} \le \infty$. Gilt dann $$\P(A) = \frac{\abs{A}}{\abs{\Omega}} \quad \forall A \subset \Omega \text{,}$$ so heißt $(\Omega,\P)$ \textit{Laplacescher Wahrscheinlichkeitsraum}. Man nennt dann $\P$ \textit{Gleichverteilung} auf $\Omega$.
+\end{karte}
+
+\begin{karte}{Verallgemeinerte diskrete Wahrscheinlichkeitsräume}
+	Sei $\Omega \neq \emptyset$ eine Menge und $\Omega_0 \subset \Omega$ diskret. Dann heißt $(\Omega,\P)$ \textit{verallgemeinerter diskreter Wahrscheinichkeitsraum} mit Träger $\Omega_0$, falls es eine Funktion $\abb{p}{\Omega}{[0,\infty)}$ mit 
+	$$p(\omega)=0 \; \forall \omega \notin \Omega_0 \quad \text{ und } \quad \sum_{\omega \in \Omega_0} p(\omega) =1$$
+	gibt und für $\P$ gilt:
+	$$\P(A)=\sum_{\omega \in A \cap \Omega_0} p(\omega) \quad \forall A \subset \Omega$$
+\end{karte}
+
+\begin{karte}{Verteilung einer Zufallsvariable}
+	Sei $(\Omega,\P)$ ein diskreter W-Raum und $\abb{X}{\Omega}{\R}$ eine Zufallsvariable. Dann heißt die durch
+	$$\P^X(B):=\P(X^{-1}(B)), \quad B \subset \R$$ definierte Funktion $\abb{\P^X}{\PO(\R)}{\R}$ \textit{Verteilung} von $X$. \\
+	In dieser Situation ist $(\R,\P^X)$ ein verallgemeinerter diskreter W-Raum mit Träger $X(\Omega)$.
+\end{karte}

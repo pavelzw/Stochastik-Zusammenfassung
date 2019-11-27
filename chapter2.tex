@@ -1,0 +1,70 @@
+\section*{Ereignisse und Zufallsvariablen}
+
+\begin{karte}{Ereignisse}
+	Gegeben eine Grundmenge $\Omega \neq \emptyset$, heißen die Elemente von $\Omega$ \textit{Elementarereignisse}. Teilmengen von $\Omega$ heißen \textit{Ereignisse}. \\
+	\textbf{Interpretation:} $\omega\in\Omega  \;\widehat{=}\;$ Ergebnis eines zufälligen/stochastischen Experiments. Ist $A \subset \Omega$ ein Ereignis und $\omega \in A$, so tritt $A$ ein.
+\end{karte}
+
+\begin{karte}{Mengentheoretische Operationen mit Ereignissen}
+	Seien $A,B \subset \Omega$. \\
+	\begin{center}
+		\begin{tabular}{ll}
+			$A \cap B$ & \glqq$A$ und $B$ treten ein.\grqq \\
+			$A \cup B$ & \glqq Mindestens $A$ oder $B$ treten ein.\grqq \\
+			$\overline{A} = A^C := \Omega \setminus A$ & \glqq $A$ tritt nicht ein.\grqq \\
+			$A\setminus B$ & \glqq $A$ tritt ein, $B$ aber nicht.\grqq \\
+			$\emptyset$ & \glqq Unmögliches Ereignis\grqq \\
+			$\Omega$ & \glqq Sicheres Ereignis\grqq
+		\end{tabular}
+	\end{center}
+	Folgende Rechenregeln gelten:
+	\begin{itemize}
+		\item $A\cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+		\item $\overline{A \cup B} = \overline{A} \cap \overline{B}$
+		\item $\overline{A \cap B} = \overline{A} \cup \overline{B}$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Zufallsvariable}
+	Eine Abbildung $\abb{X}{\Omega}{\R}$ heißt \textit{(reelle) Zufallsvariable (ZV)}. Für $\omega \in \Omega$ heißt $X(\omega)$ \textit{Realisierung von} $X$. \\
+	\textbf{Interpretation:} Weil $\omega \in\Omega$ das Ergebnis eines zufälligen Experiments ist, ist auch $X(\omega)$ \glqq zufällig\grqq. \\
+	Für $M \subset \R$ und eine ZV $X$ sei $\set{X \in M} := \set{\omega  \in \Omega \;|\; X(\omega) \in M} = X^{-1}(M)$, für $t \in \R$ sei $\set{X = t} := \set{\omega \in \Omega \;|\; X(\omega) = t} = X^{-1}(\set{t})$. \\
+	\textbf{Rechenregeln:}
+	\begin{itemize}
+		\item $X^{-1}(M \cap N) = X^{-1}(M) \cap X^{-1}(N)$
+		\item $X^{-1}(M \cup N) = X^{-1}(M) \cup X^{-1}(N)$
+	\end{itemize}
+	Dies gilt auch für beliebige Vereinigungen/Schnitte.
+	\begin{itemize}
+		\item $X^{-1}(\overline{M}) = \overline{X^{-1}(M)}$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Arithmetik von Zufallsvariablen}
+	Seien $\abb{X,Y}{\Omega}{\R}$ Zufallsvariablen. Man definiere 
+	$$X+Y,\; aX+bY,\; X\cdot Y\; ,\frac{X}{Y}$$ als punktweise Operationen.
+\end{karte}
+
+\begin{karte}{Indikatorfunktion}
+	Für $A \subset \Omega$ ist
+	$$\abb{\1_A}{\Omega}{\{0,1\} \subset\R}, \quad \omega \mapsto
+	\begin{cases}
+	1 & \omega \in A \\
+	0 & \omega \notin A
+	\end{cases}$$
+	die \textit{Indikatorfunktion} von $A$. \\
+	Es gilt:
+	\begin{itemize}
+		\item $\1_{\emptyset} \equiv 0$, \quad $\1_{\Omega} \equiv 1$
+		\item $(\1_A)^2 \equiv \1_A$
+		\item $\1_{A^C} \equiv 1-\1_A$
+		\item Falls $A\subset B$: $\1_{B \setminus A} \equiv \1_B - \1_A$
+		\item $\1_{A \cap B} \equiv \1_A \cdot \1_B$, \quad $\1_{A \cup B} \equiv \1_A + \1_B - \1_A \cdot \1_B$
+		\item $\1_{A \triangle B} \equiv \abs{\1_A-\1_B}$
+	\end{itemize}
+\end{karte} 
+
+\begin{karte}{Zählvariablen}
+	Seien $A_1,\dotsc,A_n \subset \Omega$. Die Zufallsvariable $$ \sum_{j=1}^{n} \1_{A_j}$$ heißt \textit{Zählvariable}. Es gilt dann
+	$$ \set{X=k}=\mathop{\bigcup_{T \subset [n]}}_{\abs{T}=k}((\bigcap_{j \in T} A_j) \cap (\bigcap_{j \notin T} A_j^C))$$
+\end{karte}
