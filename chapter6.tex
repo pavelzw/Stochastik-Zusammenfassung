@@ -1,0 +1,22 @@
+\section*{Hypergeometrische und Binomialverteilung}
+ \begin{karte}{Hypergeometrische Verteilung}
+ 	Gegeben sei eine Urne mit $r$ roten und $s$ schwarzen Kugeln $\set{1,\dotsc,r,r+1,\dotsc,r+s}$. Nun wird $n$-mal gezogen ohne Zurücklegen. Setze:
+ 	\begin{itemize}
+ 		\item $\Omega := \set{(a_1,\dotsc,a_n) \in [r+s]^n \;|\; a_i \neq a_j \text{ für } i \neq j} \quad A_j := {(a_1,\dotsc,a_n) \;|\; a_j \leq r}$
+ 		\item $\P$ GV auf $\Omega$, $\displaystyle X:= \sum_{j=1}^{n} \1_{A_j}$ Anzahl der roten Kugeln
+ 	\end{itemize}
+ 	Die Verteilung von $X$ heißt dann \textit{Hypergeometrische Verteilung} $X \sim \text{Hyp}(n,r,s)$. Dann gilt
+ 	\begin{itemize}
+ 		\item $\E X = n \cdot \frac{r}{r+s}$
+ 		\item $\P(X=k) = \frac{\binom{r}{k} \cdot \binom{s}{n-k}}{\binom{r+s}{n}}$
+ 	\end{itemize}
+ \end{karte}
+
+\begin{karte}{Binomialverteilung}
+	$n$-maliges Ziehen aus $r+s$ Kugeln mit Zurücklegen. $\Omega := \per{r+s}{n}$, $\P$ GV, $A_j:=\set{j\text{-te Kugel ist rot}}, \displaystyle X := \sum_{j=1}^{n} A_j$. Dann gilt:
+	\begin{itemize}
+		\item $\E X = n \cdot \frac{r}{r+s}$
+		\item $\P(X=k)=\binom{n}{k}p^k(1-p)^{n-k} \text{, wobei } p = \frac{r}{r+s}$ 
+	\end{itemize}
+	Dies lässt sich verallgemeinern: Seien $p \in [0,1], n \in \N$. Eine ZV $X$ heißt \textit{binomialverteilt} $X \sim \text{Bin}(n,p)$, falls  $$\P(X=k)=\binom{n}{k}p^k(1-p)^{n-k} \text{.}$$
+\end{karte}

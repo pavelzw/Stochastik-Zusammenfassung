@@ -1,0 +1,40 @@
+\section*{Kombinatorik}
+
+\begin{karte}{Grundprinzipien der Kombinatorik}
+	\begin{itemize}
+		\item Falls $A_1,\dotsc,A_n$ endliche, paarweise disjunkte Mengen, so gilt:
+		$$ \abs{A_1 \cup \dots \cup A_n} = \abs{A_1} + \dots + \abs{A_n}$$
+		\item Für beliebige endliche Mengen $A_1,\dotsc,A_n$ gilt:
+		$$ \abs{A_1 \times \dots \times A_n} = \abs{A_1} \dotsm \abs{A_n}$$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Urnenmodelle}
+	Man betrachte eine Urne mit $n \in \N$ nummerierten Kugeln. Es werden $k$ Kugeln nach folgenden \gqq{Regeln} gezogen:
+	\begin{center}
+		\begin{tabular}{c||c|c}
+			& Reihenfolge beachten & Reihenfolge nicht beachten \\
+			\hline \hline
+			mit Zurücklegen & $\per{n}{k}$ & $\kom{n}{k}$ \\ \hline
+			ohne Zurücklegen & $\perneq{n}{k}$ & $\komneq{n}{k}$ \\
+		\end{tabular}
+	\end{center}
+	Diese Räume lassen sich nun wie folgt modellieren, wobei $M:=[n], k \in M$:
+	\begin{itemize}
+		\item $\per{n}{k}=M\times \dots \times M = M^k$, $ \displaystyle \abs{\per{n}{k}}=n^k$
+		\item $\perneq{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_i \neq a_j \text{ für } i \neq j}$, \\ $\displaystyle \abs{\perneq{n}{k}}=n\dotsm (n-k+1) =: n^{\underline{k}}$
+		\item $\kom{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_1 \leq \dots \leq a_k}$, $\displaystyle \abs{\kom{n}{k}}=\binom{n+k-1}{k}$
+		\item $\komneq{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_1 < \dots < a_k}$, $\displaystyle \abs{\komneq{n}{k}}=\binom{n}{k}$
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Das Koinzidenzproblem}
+	Es sei $n \in \N$ und $(\Omega,\P):=(\perneq{n}{n},\text{GV})$ sei 
+	$$p_i^{(n)}:=\P({\set{(a_1,\dotsc,a_n) \in \Omega \;|\; \abs{\set{j \;|\; a_j = j}} = i}}) \quad \forall i \in \set{0,\dotsc,n}$$
+	Dann gilt:
+	$$p_i^{(n)}=\frac{1}{i!}\sum_{k=0}^{n-i} (-1)^k \frac{1}{k!}$$
+\end{karte}
+
+\begin{karte}{Poisson-Verteilung}
+	Es seien $\lambda > 0$ und $Q$ das durch $$Q(\set{i}):=\frac{\lambda ^{i}}{i!}e^{-\lambda}$$ definierte W-Maß auf $\N_0$. Man nennt $Q=:P_0{\lambda}$ \textit{Poisson-Verteilung} mit Parameter $\lambda$. 
+\end{karte}

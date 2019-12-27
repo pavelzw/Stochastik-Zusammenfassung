@@ -1,0 +1,38 @@
+\section*{Der Erwartungswert}
+
+\begin{karte}{Erwartungswert}
+	Sei $(\Omega,\P)$ ein verallgemeinerter diskreter W-Raum mit Träger $\Omega_0$. Es sei $\abb{X}{\Omega}{\R}$ eine ZV. Gilt
+	$$ \sum_{\omega \in \Omega_0} \abs{X(\omega)}\P(\set{\omega}) < \infty \quad \text{oder} \quad X \geq 0$$
+	so heißt die Zahl
+	$$ \E[X] := \sum_{\omega \in \Omega_0} X(\omega)\P(\set{\omega})$$
+	\textit{Erwartungswert} von $X$.
+\end{karte}
+
+\begin{karte}{Eigenschaften des Erwartungswerts}
+	Sei $(\Omega,\P)$ (verallgemeinerter) diskreter W-Raum. Es sei 
+	$$ L^1(\P) := \set{\abb{X}{\Omega}{\R} \;|\; \E\abs{X} < \infty}$$ der Raum der integrierbaren Zufallsvariablen. \\
+	Für $X,Y \in L^1(\P)$ und $a \in \R$ gilt dann
+	\begin{itemize}
+		\item $\E[X+Y] = \E X+\E Y$
+		\item $\E[aX] = a\E X$
+		\item $ X \leq Y \Rightarrow \E X \leq  \E Y$
+		\item Für $X = \1_{A}$, wobei $A\subset \Omega$, gilt $\E X = \P(A)$.
+		\item $\abs{\E X} \leq \E\abs{X}$
+		\item Für $A_1,\dotsc,A_n \subset \Omega$ und $c_1,\dotsc,c_n \in \R$ gilt $\displaystyle \E[\sum_{j=1}^{n} c_j\1_{A_j}] = \sum_{j=1}^{n} c_j\P(A_j)$.
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Transformationsformel}
+	Es seien $\abb{X}{\Omega}{\R}$ eine ZV und $\abb{g}{\R}{\R}$. Es gilt 
+	$$ \E\abs{g(X)} < \infty \quad \Leftrightarrow \quad \sum_{t \in X(\Omega)} \abs{g(t)}\P(X=t) < \infty \text{.}$$
+	In diesem Fall ist
+	$$ \E[g(X)] = \sum_{t \in X(\Omega)} g(t)\P(X=t) \text{ .}$$
+\end{karte}
+
+\begin{karte}{Jordan-Formel}
+	Es seien $A_1,\dotsc,A_n \subset \Omega$. Setze $\displaystyle X := \sum_{j=1}^{n} \1_{A_j}, S_0:= 1$ \\
+	$\displaystyle S_j := \sum_{1 \leq i_1 <\dots < i_j \leq n} \P(A_{i_1} \cap \dots \cap A_{i_j})$. Dann gilt
+	$$\P(X=k)=\sum_{j=k}^{n} (-1)^{j-k} \binom{j}{k} S_j \text{,} \quad k \in \set{0,\dotsc,n}$$
+	Für jedes $j \in [n]$ hänge $\P(A_{i_1} \cap \dots \cap A_{i_j})$ nur von $j$ ab. Dann gilt:
+	$$\P(X=k)=\sum_{j=k}{n} (-1)^{j-k} \binom{j}{k} \binom{n}{j} \P(A_1 \cap \dots \cap A_n)$$
+\end{karte}
