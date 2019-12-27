@@ -23,6 +23,16 @@
 	\end{itemize}
 \end{karte}
 
+\begin{karte}{Inklusions-/Exklusionsprinzip}
+	Sei $(\Omega,\P)$ diskreter W-Raum, $A_1,\dotsc,A_n \subset \Omega$.
+	$$S_k := \sum_{1 \leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k}), \quad k \in [n]$$
+	Dann gilt:
+	\begin{itemize}
+		\item $\displaystyle \P(\bigcup_{j=1}^{n} A_j) = \sum_{k=1}^{n} (-1)^{k+1}S_k \quad$ (Inklusions-/Exklusionsprinzip)
+		\item $\displaystyle \sum_{k=1}^{2s} (-1)^{k+1}S_k \leq \P(\bigcup_{j=1}^{n} A_j) \leq \sum_{k=1}^{2s+1} (-1)^{k+1}S_k \quad$ (Bonferroni-Ugl.)
+	\end{itemize}
+\end{karte}
+
 \begin{karte}{Wahrscheinlichkeitsfunktionen}
 	Sei $(\Omega, \P)$ ein diskreter W-Raum. Die Funktion $\abb{p}{\Omega}{\R},\; \omega \mapsto \P(\set{\omega})$ heißt \textit{Wahrscheinlichkeitsfunktion}. Es gilt
 	$$ \P(A) = \sum_{\omega \in A} p(\omega) \quad \forall A \subset \Omega$$
