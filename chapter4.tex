@@ -22,7 +22,8 @@
 	Diese Räume lassen sich nun wie folgt modellieren, wobei $M:=[n], k \in M$:
 	\begin{itemize}
 		\item $\per{n}{k}=M\times \dots \times M = M^k$, $ \displaystyle \abs{\per{n}{k}}=n^k$
-		\item $\perneq{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_i \neq a_j \text{ für } i \neq j}$, \\ $\displaystyle \abs{\perneq{n}{k}}=n\dotsm (n-k+1) =: n^{\underline{k}}$
+		\item $\perneq{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_i \neq a_j \text{ für } i \neq j}$, \\ 
+		$\displaystyle \abs{\perneq{n}{k}}=n\dotsm (n-k+1) =: n^{\underline{k}}$
 		\item $\kom{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_1 \leq \dots \leq a_k}$, $\displaystyle \abs{\kom{n}{k}}=\binom{n+k-1}{k}$
 		\item $\komneq{n}{k}=\set{(a_1,\dotsc,a_k) \in M^k \;|\; a_1 < \dots < a_k}$, $\displaystyle \abs{\komneq{n}{k}}=\binom{n}{k}$
 	\end{itemize}
@@ -32,7 +33,7 @@
 	Es sei $n \in \N$ und $(\Omega,\P):=(\perneq{n}{n},\text{GV})$ sei 
 	$$p_i^{(n)}:=\P({\set{(a_1,\dotsc,a_n) \in \Omega \;|\; \abs{\set{j \;|\; a_j = j}} = i}}) \quad \forall i \in \set{0,\dotsc,n}$$
 	Dann gilt:
-	$$p_i^{(n)}=\frac{1}{i!}\sum_{k=0}^{n-i} (-1)^k \frac{1}{k!}$$
+	$$p_i^{(n)}=\frac{1}{i!}\sum_{k=0}^{n-i} (-1)^k \frac{1}{k!}. $$
 \end{karte}
 
 \begin{karte}{Poisson-Verteilung}

@@ -1,7 +1,7 @@
 \section*{Diskrete Wahrscheinlichkeitsräume}
 
 \begin{karte}{Diskreter Wahrscheinlichkeitsraum}
-	Ein Paar $(\Omega, \P)$ heißt \textit{diskreter Wahrscheinlichkeitsraum (W-Raum)}, falls $\Omega$ eine diskrete Menge ist und $\abb{\P}{\PO(\Omega)}{\R}$ eine Abbildung mit den folgenden Eigenschaften:
+	Ein Paar $(\Omega, \P)$ heißt \textit{diskreter Wahrscheinlichkeitsraum} (W-Raum), falls $\Omega$ eine diskrete Menge ist und $\abb{\P}{\PO(\Omega)}{\R}$ eine Abbildung mit den folgenden Eigenschaften:
 	\begin{itemize}
 		\item[(P1)] $\P(A) \geq 0 \quad \forall A \subset \Omega$
 		\item[(P2)] $\P(\Omega) = 1 \qquad$ (Normierungsbedingung)
@@ -25,7 +25,7 @@
 
 \begin{karte}{Inklusions-/Exklusionsprinzip}
 	Sei $(\Omega,\P)$ diskreter W-Raum, $A_1,\dotsc,A_n \subset \Omega$.
-	$$S_k := \sum_{1 \leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k}), \quad k \in [n]$$
+	$$ S_k := \sum_{1 \leq i_1 < \dots < i_k \leq n} \P(A_{i_1} \cap \dots \cap A_{i_k}) = \sum_{\substack{T \subset [n] \\ \abs{T} = k}} \P(\bigcap_{j\in T} A_j), \quad k \in [n] $$
 	Dann gilt:
 	\begin{itemize}
 		\item $\displaystyle \P(\bigcup_{j=1}^{n} A_j) = \sum_{k=1}^{n} (-1)^{k+1}S_k \quad$ (Inklusions-/Exklusionsprinzip)

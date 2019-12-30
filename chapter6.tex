@@ -1,4 +1,4 @@
-\section*{Hypergeometrische und Binomialverteilung}
+\section*{Hypergeom. und Binomialverteilung}
  \begin{karte}{Hypergeometrische Verteilung}
  	Gegeben sei eine Urne mit $r$ roten und $s$ schwarzen Kugeln $\set{1,\dotsc,r,r+1,\dotsc,r+s}$. Nun wird $n$-mal gezogen ohne Zurücklegen. Setze:
  	\begin{itemize}
@@ -13,7 +13,7 @@
  \end{karte}
 
 \begin{karte}{Binomialverteilung}
-	$n$-maliges Ziehen aus $r+s$ Kugeln mit Zurücklegen. $\Omega := \per{r+s}{n}$, $\P$ GV, $A_j:=\set{j\text{-te Kugel ist rot}}, \displaystyle X := \sum_{j=1}^{n} A_j$. Dann gilt:
+	$n$-maliges Ziehen aus $r+s$ Kugeln mit Zurücklegen. $\Omega := \per{r+s}{n}$, $\P$ GV, $A_j:=\set{j\text{-te Kugel ist rot}}, \displaystyle X := \sum_{j=1}^{n} \mathds{1}_{A_j} $. Dann gilt:
 	\begin{itemize}
 		\item $\E X = n \cdot \frac{r}{r+s}$
 		\item $\P(X=k)=\binom{n}{k}p^k(1-p)^{n-k} \text{, wobei } p = \frac{r}{r+s}$ 

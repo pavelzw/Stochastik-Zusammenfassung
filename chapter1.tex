@@ -2,11 +2,11 @@
 
 \begin{karte}{Der Grundraum}
 	Der \textit{Grundraum} ist eine Menge $\Omega \neq \emptyset$ (auch Grundgesamtheit, Merkmalsraum, Stichprobenraum). \\
-	\textbf{Annahme:} $\Omega$ sei diskret (d.h. entweder endlich oder abzählbar unendlich), oft $\Omega \subset \R$.
+	\textbf{Annahme:} $\Omega$ sei diskret (d. h. entweder endlich oder abzählbar unendlich), oft $\Omega \subset \R$.
 \end{karte}
 
 \begin{karte}{Absolute und relative Häufigkeiten}
-	Seien $x_1,\dotsc,x_n \in \Omega$ für ein $n \in \N$ (z.B. Daten, Beobachtungen). Für $\omega \in \Omega$ sei
+	Seien $x_1,\dotsc,x_n \in \Omega$ für ein $n \in \N$ (z. B. Daten, Beobachtungen). Für $\omega \in \Omega$ sei
 	$$h(\omega):=\abs{\set{j \in [ n ] \;|\; x_j=\omega }} $$
 	die \textit{absolute Häufigkeit} von $\omega$. Es gilt:
 	$$\sum_{\omega \in \Omega}^{} h(\omega) = n$$
@@ -27,7 +27,8 @@
 \end{karte}
 
 \begin{karte}{Arithmetisches Mittel}
-	Das \textit{arithmetische Mittel} (Schwerpunkt) von $x_1,\dotsc,x_n \in \R$ ist $$ \overline{x} := \frac{1}{n}\sum_{j=1}^{n} x_j \quad (= l(x_1,\dotsc,x_n))$$.
+	Das \textit{arithmetische Mittel} (Schwerpunkt) von $x_1,\dotsc,x_n \in \R$ ist 
+	$$ \overline{x} := \frac{1}{n}\sum_{j=1}^{n} x_j \quad (= l(x_1,\dotsc,x_n)).$$
 	
 	Es ist $\displaystyle \sum_{j=1}^{n} (x_j-\overline{x})^2 = 
 	\min_{t \in \R} \sum_{j=1}^{n} (x_j-t)^2$.
@@ -48,7 +49,7 @@
 
 \begin{karte}{Streuungsmaße}
 	Ein \textit{Streuungsmaß} ist eine Funktion $\abb{\sigma}{\R^n}{\R}$ mit $$\sigma(x_1+a,\dotsc,x_n+a) = \sigma(x_1,\dotsc,x_n) \qquad \forall x_1,\dotsc,x_n \in \R, a \in \R$$
-	Wichtige Streuungsmaße sind z.B.
+	Wichtige Streuungsmaße sind z. B.
 	\begin{itemize}
 		\item \textit{empirische Varianz}: $\displaystyle s^2:=\frac{1}{n-1} \sum_{j=1}^{n} (x_j-\overline{x})^2$
 		\item \textit{empirische Standardabweichung}: $s :=+\sqrt{s^2}$
