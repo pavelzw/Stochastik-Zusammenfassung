@@ -1,0 +1,29 @@
+\section*{Bedingte Wahrscheinlichkeiten}
+
+\begin{karte}{Bedingte Wahrscheinlichkeit}
+    Sei \( (\Omega, \P) \) ein diskreter W-Raum.\\
+    Für \( A, B \subset \Omega \) mit \( \P(B) > 0 \) setzt man 
+    \[ \P(A|B) := \frac{\P(A\cap B)}{\P(B)}. \]
+    Man nennt diese Zahl bedingte Wahrscheinlichkeit von \(A\) 
+    unter der Bedingung \(B\).\\
+    \( \P_B := \P(\;\cdot\; | B) \) ist ein W-Maß.
+\end{karte}
+
+\begin{karte}{Multiplikationsformel}
+    Es seien \( A_1, \ldots A_n \) Ereignisse mit 
+    \( \P(A_1 \cap \ldots \cap A_n) > 0 \). 
+    Dann gilt 
+    \[ \P(\bigcap_{j=1}^n A_j) = \P(A_1) \P(A_2 | A_1) 
+    \cdots \P(A_n | A_1 \cap\ldots \cap A_{n-1}). \]
+\end{karte}
+
+\begin{karte}{Formel der totalen Wahrscheinlichkeit, Bayes-Formel}
+    Seien \( A_1, A_2, \ldots \) eine Zerlegung von \( \Omega \) 
+    und \(B\subset \Omega\). Dann gilt 
+    \begin{enumerate}
+        \item \( \P(B) = \sum_{j=1}^\infty \P(B|A_j) \P(A_j) \). (Formel der totalen Wahrscheinlichkeit)
+        \item Falls \( \P(B) > 0 \), so gilt 
+        \[ \P(A_k | B) = \frac{ \P(A_k) \P(B | A_k) }{ \sum_{j=1}^\infty \P(B|A_j) \P(A_j) }. 
+        \text{ (Bayes-Formel)} \]
+    \end{enumerate}
+\end{karte}

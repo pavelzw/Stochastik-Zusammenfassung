@@ -1,0 +1,27 @@
+\section*{Mehrstufige Experimente}
+
+\begin{karte}{Modellierung mehrstufiger Experimente}
+	Sei \( \Omega = \Omega_1 \times \cdots \times \Omega_n \) diskret und 
+	\( \omega = (a_1, \ldots, a_n) \in \Omega \).\\
+	Die Startverteilung ist wie folgt definiert: \\
+	\( \abb{p_1}{\Omega_1}{[0,1]} \), es gilt \( \sum_{\omega\in \Omega_1} p_1(\omega) = 1 \).\\
+	Die Übergangswahrscheinlichkeiten sind wie folgt definiert: 
+	\[ p_2(a_2 \;|\; a_1) \geq 0, p_3(a_3 \;|\; a_1, a_2) \geq 0, \ldots, 
+	p_n(a_n \;|\; a_1,\ldots,a_{n-1}) \geq 0. \]
+	Es muss für \(j \geq 2\) gelten
+	\( \sum_{a_j \in \Omega_j} p_j(a_j \;|\; a_1,\ldots,a_j) = 1 \).\\
+	Setze für \(A \subset \Omega \)
+	\[ \P(A) := \sum_{a \in A} p(a), \]
+	wobei \( p(a) = p_1(a_1) p_2(a_2 \;|\; a_1) 
+	\cdots p_n(a_n \;|\; a_1,\ldots a_{n-1}) \). 
+	\(\P\) ist ein W-Maß auf \(\Omega\).
+\end{karte}
+
+\begin{karte}{Produkt von W-Räumen}
+	Für gegebene diskrete W-Räume \( (\Omega_1, \P_1),\ldots, (\Omega_n, \P_n) \)
+	heißt der durch \( \Omega := \Omega_1 \times \cdots \times \Omega_n \), 
+	\( \P(A_1 \times \cdots \times A_n) := \P_1(A_1) \cdots \P_n(A_n) \)
+	festgelegte W-Raum \((\Omega, \P)\) Produkt der W-Räume 
+	\( (\Omega_1, \P_1),\ldots, (\Omega_n, \P_n) \).
+	Man schreibt auch \( \P := \bigotimes_{j=1}^n \P_j \).
+\end{karte}
