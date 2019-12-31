@@ -1,0 +1,49 @@
+\section*{Stochastische Unabhängigkeit}
+
+\begin{karte}{Stochastische Unabhängigkeit}
+    Ereignisse \( A_1, \ldots A_n \subset \Omega \) heißen stochastisch 
+    unabhängig, falls 
+    \[ \P\left( \bigcap_{j\in T} A_j \right) = \prod_{j \in T} \P(A_j) \; \forall T\subset [n]. \]
+
+    Sind \( A \) und \( B \) stochastisch unabhängig, so ist \( \P(A|B) = \P(A) \) 
+    und \( A \) und \( B^C \) sind stochastisch unabhängig.
+    \( A \) ist nur dann mit sich selbst unabhängig, wenn \( \P(A) = 1 \) oder \( \P(A) = 0 \).
+\end{karte}
+
+\begin{karte}{Unabhängigkeit und Komplementbildung}
+    Ereignisse \( A_1,\ldots, A_n \subset \Omega \) sind genau dann unabhängig, wenn 
+    \[ \P\left( \bigcap_{i \in I} A_j \cap \bigcap_{j \in J} A_j^c \right) 
+    = \prod_{i\in I} \P(A_i) \prod_{j\in J} \P(A_j^C) \] 
+    für jede Wahl disjunkter Mengen \( I,J \subset [n] \).
+\end{karte}
+
+\begin{karte}{Blockungslemma}
+    Für \( A \subset \Omega \) sei \( A^1 := A, A^0 := A^C \).
+    Für \( B_1,\ldots, B_k \subset \Omega \) sei 
+    \[ \sigma(B_1,\ldots,B_k) 
+    := \left\{ \bigcup_{ (\varepsilon_1,\ldots,\varepsilon_k)\in U } 
+    B_1^{\varepsilon_1} \cap \ldots \cap B_k^{\varepsilon_k} : U \subset \set{0,1}^k \right\} \]
+    die von \( B_1,\ldots,B_k \) erzeugte Algebra.
+    Jede Menge (nichtleer) der Form \\
+    \( B_1^{\varepsilon_1} \cap \ldots \cap B_k^{\varepsilon_k} \)
+    heißt Atom von \( \sigma(B_1,\ldots,B_k) \).
+
+    Seien \( A_1, \ldots, A_n \) unabhängige Ereignisse und \(1\leq k \leq n\), 
+    \( B \in \sigma(A_1,\ldots,A_k) \), \( C \in \sigma(A_{k+1}, \ldots, A_n) \). 
+    Dann sind \(B\) und \(C\) unabhängig.
+\end{karte}
+
+\begin{karte}{Erzeugungsweise der Binomialverteilung}
+    Seien \( A_1, \ldots, A_n \subset \Omega \) unabhängig mit 
+    \( \P(A_j) =: p, j \in [n] \) für ein \( p \in [0,1] \). 
+    Dann gilt 
+    \[ X := \sum_{j=1}^n \1_{A_j} \sim \Bin(n,p). \]
+\end{karte}
+
+\begin{karte}{Bernoulli-Kette}
+    Es sei \( (\Omega, \P) := \left( \bigtimes_{j=1}^n \Omega_j, 
+    \bigotimes_{j=1}^n \P_j \right) \) mit 
+    \[ \Omega_j = \set{0,1}, \quad \P_j(\set{1}) = p = 1 - \P_j(\set{0}). \]
+    Dies ist eine Bernoulli-Kette der Länge \(n\) mit Parameter \(p\).\\
+    In der Bernoulli-Kette ist die Anzahl der Erfolge binomialverteilt.
+\end{karte}
