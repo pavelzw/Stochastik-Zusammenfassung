@@ -11,11 +11,13 @@
 \RequirePackage{tikz}
 \usetikzlibrary{cd}
 
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
+
 \let\oldforall\forall
 \renewcommand{\forall}{\oldforall \,}
 \let\oldexists\exists
 \renewcommand{\exists}{\oldexists \,}
-\newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -24,29 +26,32 @@
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\PO}{\mathcal{P}}
+
 \newcommand{\1}{\mathds{1}}
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
-\newcommand{\minus}{\scalebox{0.75}[1.0]{\(-\)}}
-\newcommand{\shortminus}{\scalebox{0.5}[1.0]{\(-\)}}
-\newcommand{\inverse}[1]{{#1}^{\minus 1}}
+
+
 \newcommand{\existse}{\oldexists! \,}
 \renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\Re}{\operatorname{{Re}}}
+
 \newcommand{\oversett}[2]{\overset{\text{#1}}{#2}}
 \newcommand{\undersett}[2]{\underset{\text{#1}}{#2}}
+
 \newcommand{\abs}[1]{\left| #1 \right|}
 \newcommand{\set}[1]{\{#1\}}
 \newcommand{\abb}[3]{\ensuremath{#1 : #2 \rightarrow #3}}
+
 \newcommand{\limes}[1]{\lim\limits_{#1\rightarrow\infty}}
 \newcommand{\limesx}[2]{\lim\limits_{#1\rightarrow #2}}
 \newcommand{\limessup}[1]{\limsup\limits_{#1\rightarrow\infty}}
 \newcommand{\limesinf}[1]{\liminf\limits_{#1\rightarrow\infty}}
+
 \newcommand{\per}[2]{Per^{#1}_{#2}}
 \newcommand{\perneq}[2]{Per^{#1}_{#2,\neq}}
 \newcommand{\kom}[2]{Kom^{#1}_{#2}}
 \newcommand{\komneq}[2]{Kom^{#1}_{#2,\neq}}
-\DeclareMathOperator{\Abb}{Abb}
 
 \DeclareMathOperator{\Bin}{Bin}
 \DeclareMathOperator{\Hyp}{Hyp}

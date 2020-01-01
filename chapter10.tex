@@ -14,3 +14,57 @@
     heißt Verteilung von \(X\).\\
     \( \P^{X_j} \) von \(X_j\) heißt \(j\)-te Marginalverteilung von \(X\).
 \end{karte}
+
+\begin{karte}{Unabhängigkeit von Zufallsvariablen}
+    Zufallsvariablen \( X_1, \ldots, X_n \subset \Omega \) 
+    heißen \textit{stochastisch unabhängig}, falls 
+    \( \set{X_1 \in B_1}, \ldots, \set{X_n \in B_n} \) 
+    für alle \( B_1, \ldots, B_n \subset \R \) 
+    unabhängig sind.
+    Dies ist äquivalent zu:
+    \[ \P(X_1 \in B_1,\ldots, X_n \in B_n) 
+    = \P(X_1\in B_1) \cdots \P(X_n \in B_n) 
+    \;\forall B_1,\ldots,B_n \subset\R \]
+    und zu 
+    \[ \P(X_1 = x_1, \ldots, X_n = x_n) 
+    = \P(X_1 = x_2) \cdots \P(X_n = x_n) 
+    \;\forall x_1,\ldots,x_n \in \R. \]
+\end{karte}
+
+\begin{karte}{Blockungslemma für Zufallsvariablen}
+    Seien \( X_1,\ldots, X_k \) unabhängige Zufallsvariablen, 
+    \( 1 \leq l \leq k - 1 \) und 
+    \( \abb{g}{\R^l}{\R}, \quad \abb{h}{\R^{k-l}}{\R}. \)
+    Dann sind \( g(X_1,\ldots,X_l) \) und \( h(X_{l+1}, \ldots, X_k) \) 
+    unabhängig.
+\end{karte}
+
+\begin{karte}{Allgemeine Transformationsformel}
+    Sei \( \abb{Z}{\Omega}{\R^k} \) eine Zufallsvariable, 
+    \( \abb{g}{\R^k}{\R}, M := \set{ z \in \R^k : \P(Z = z) > 0 } \). 
+    Dann gilt 
+    \[ \E\abs{g(Z)} < \infty \Leftrightarrow \sum_{z\in M}\abs{g(z)}\P(Z = z) < \infty. \]
+    In diesem Fall gilt 
+    \[ \E[g(z)] = \sum_{z\in M} g(z) \P(Z = z). \]
+\end{karte}
+
+\begin{karte}{Multiplikationsformel für Erwartungswerte}
+    Seien \( \abb{X,Y}{\Omega}{\R} \) unabhängige Zufallsvariablen 
+    mit \( \E\abs{X} < \infty, \E\abs{Y} < \infty \). 
+    Dann gilt \( \E\abs{XY} < \infty \) und ferner 
+    \( \E[XY] = \E X \cdot \E Y \).
+\end{karte}
+
+\begin{karte}{Diskrete Faltungsformel}
+    Seien \( \abb{X,Y}{\Omega}{\R} \) Zufallsvariablen. 
+    Es gilt 
+    \[ \P(X + Y = z) = \sum_{\substack{ x \in X(\Omega_0), y \in Y(\Omega_0)\\ x + y = z }} \P(X = x, Y = y). \]
+    Falls \( X,Y \) unabhängig sind, so gilt 
+    \[ \P(X + Y = z) = \sum_{x \in X(\Omega_0)} \P(X = x) \P(Y = z - x). \]
+\end{karte}
+
+\begin{karte}{Additionsgesetz für die Binomialverteilung}
+    Seien \( \abb{X,Y}{\Omega}{\R} \) unabhängig und 
+    \( X \sim \Bin(m,p), Y \sim \Bin(n,p) \). Dann gilt 
+    \[ X + Y \sim \Bin(m+n,p). \]
+\end{karte}

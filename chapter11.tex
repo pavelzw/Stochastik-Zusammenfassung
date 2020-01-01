@@ -1,0 +1,101 @@
+\section*{Varianz, Kovarianz, Korrelation}
+
+\begin{karte}{Varianz und Standardabweichung}
+    Sei \( \abb{X}{\Omega}{\R} \) eine Zufallsvariable mit 
+    \( E X^2 < \infty \). 
+    Dann heißt \( V(X) :+ \E((X - \E X)^2) - \sigma^2(X) \) 
+    die Varianz von \(X\) und \( +\sqrt{V(X)} = \sigma(X) \)
+    die Standardabweichung von \(X\).
+\end{karte}
+
+\begin{karte}{Darstellungsformeln der Varianz}
+    Es gilt 
+    \[ V(X) = \E X^2 - (\E X)^2. \]
+    Falls \( \sum_{j\geq 1} \P(X - x_j) = 1 \) gilt, dann auch 
+    \[ V(X) = \sum_{j\geq 1} (X_j - \E X)^2 \P(X - x_j). \]
+\end{karte}
+
+\begin{karte}{Eigenschaften der Varianz}
+    Sei \( \E X^2 < \infty \). Dann gilt 
+    \begin{enumerate}
+        \item \( V(X) = \E(X - c)^2 - (\E X - c)^2 \; \forall c \in \R \). (Steiner-Formel)
+        \item \( V(X) = \min_{c\in \R} \E(X - c)^2 \).
+        \item \( V(aX + b) = a^2 V(X) \;\forall a,b\in \R \).
+        \item \( V(X) \geq 0, V(X) = 0 \Leftrightarrow \exists a \in \R: \P(X = a) = 1 \).
+        \item \( V(\1_A) = \P(A)(1 - \P(A)) \) für \(A \subset \Omega\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Varianz über Indikatorsumme}
+    Sei \( X := \sum_{j=1}^n \1_{A_j} \). Dann gilt 
+    \[ V(X) = \sum_{i=1}^n \P(A_i)(1-\P(A_i)) 
+    + 2 \sum_{1 \leq i < j \leq n} (\P(A_i \cap A_j) - \P(A_i)\P(A_j)). \]
+\end{karte}
+
+\begin{karte}{Standardisierung}
+    \( X \) heißt \textit{standardisiert}, falls \( \E X = 0, V(X) = 1 \).\\
+    Ist \( X \) eine Zufallsvariable mit \( V(X) > 0 \). Dann heißt  
+    \[ X^* = \frac{ X - \E X }{\sqrt{V(X)}} \]
+    die zu \( X \) standardisierte Zufallsvariable oder Standardisierung von \(X\).
+    \( X \mapsto X^* \) heißt Standardisierung.\\
+    Es gilt dann \( \E X^* = 0, V(X^*) = 1 \).
+\end{karte}
+
+\begin{karte}{Tschebyscheff-Ungleichung}
+    Sei \( X \) eine Zufallsvariable mit \( \E X^2 < \infty \). Dann gilt 
+    \[ \P(\abs{ X - \E X }\geq \varepsilon ) < \frac{V(X)}{\varepsilon^2}\; \forall \varepsilon > 0. \]
+\end{karte}
+
+\begin{karte}{Kovarianz}
+    Für \( X,Y \in L^2(\P) \) (\( \E X^2 < \infty, \E Y^2 < \infty \)). 
+    Dann heißt 
+    \[ C(X,Y) := \E [ (X - \E X)(Y - \E Y) ] \]
+    Kovarianz von \(X\) und \(Y\). 
+    Gilt \( C(X,Y) = 0 \), so sind \(X\) und \(Y\) unkorreliert. Gilt 
+    \( V(X) V(Y) > 0 \), so heißt 
+    \[ \rho(X,Y) := \frac{C(X,Y)}{\sqrt{V(X)}\sqrt{V(Y)}} \]
+    pearsonscher Korrelationskoeffizient von \(X\) und \(Y\).
+\end{karte}
+
+\begin{karte}{Eigenschaften der Kovarianz}
+    Es seien \( X,Y \in L^2(\P), a,b\in \R \). Dann gilt 
+    \begin{enumerate}
+        \item \( C(X,Y) = \E[X Y] - (\E X)(\E Y) \).
+        \item \( C(X,Y) = C(Y,X) \).
+        \item \( C(X,X) = V(X) \).
+        \item \( C(aX + b, cY + d) = ac C(X,Y) \).
+        \item \( X,Y \) unabhängig \( \Rightarrow C(X,Y) = 0 \).
+        \item \( V(X + Y) = V(X) + V(Y) + 2C(X,Y) \).
+        \item \( V(\sum_{i=1}^n X_i) = \sum_{i=1}^n V(X_i) + 2\sum_{1\leq i < j \leq n} C(X_i, X_j) \).
+        \item \( C(\1_A, \1_B) = \P(A \cap B) - \P(A) \P(B) \).
+        \item \( C(\sum_{i=1}^m X_i, \sum_{j=1}^n Y_j) = \sum_{i=1}^m \sum_{j=1}^n C(X_i, Y_j) \).
+        \item \( \rho(aX + b, cY + d) = \mathrm{sign}(ac)\rho(X,Y) \).
+        \item Sind \( X_1,\ldots,X_n \) unabhängig, so folgt 
+        \( V(\sum_{i=1}^n X_i) = \sum_{i=1}^n V(X_i) \).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Darstellungsformel für Kovarianz} % nur im Henze Skript
+    Sei \( \sum_{i\geq 1} \P(X = x_i) = 1 = \sum_{j\geq 1} \P(Y = y_j) \). Dann gilt 
+    \[ C(X,Y) = \sum_{i \geq 1} \sum_{j \geq 1} x_i y_j \P(X = x_i, Y = y_j) - \E X \E Y. \]
+\end{karte}
+
+\begin{karte}{Optimierungsproblem Erwartungswert}
+    Gilt \( X,Y \in L^2(\P) \) mit \( V(X)V(Y) > 0 \). 
+    Dann gilt 
+    \[ \min_{a,b} \E(Y - a - bX)^2 = V(X) (1 - \rho(X,Y)^2). \]
+    Die Minimalstelle \( (a^*, b^*) \) ist gegeben durch 
+    \[ b^* = \frac{C(X,Y)}{V(X)}, \quad a^* = \E Y - b^* \E X. \]
+\end{karte}
+
+\begin{karte}{CSU, Eigenschaften Korrelationskoeffizient}
+    Für \( X,Y \in L^2(\P) \) gilt 
+    \begin{enumerate}
+        \item \( C(X,y)^2 \leq V(X) V(Y) \).
+        \item Falls \( V(X)V(Y) > 0 \), so gilt \( \abs{\rho(X,Y)} \leq 1 \).
+        Es gilt \gqq{\(=\)} genau dann, 
+        wenn \( \exists a,b\in \R \) mit \( a \neq 0 \), sodass \( \P(aX + b) = 1 \).
+        In diesem Fall gilt \( \rho(X,Y) = 1 \), falls \( a > 0 \) und 
+        \( \rho(X,Y) = -1 \), falls \( a < 0 \).
+    \end{enumerate}
+\end{karte}
