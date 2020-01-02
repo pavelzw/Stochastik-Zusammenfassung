@@ -1,0 +1,48 @@
+\section*{Multinomialverteilung}
+
+\begin{karte}{Multinomialverteilung}
+    Ein Zufallsvektor \( (X_1, \ldots, X_s) \) besitzt eine 
+    Multinomialverteilung mit Parametern \( n\in\N, p_1,\ldots,p_s \) 
+    (\(p_i \geq 0, \sum p_i = 1\)) 
+    (\( (X_1,\ldots,X_s) \sim \Mult(n;p_1,\ldots,p_s) \)), falls die Zähldichte wie folgt aussieht: 
+    \[ \P(X_1 = k_1, \ldots, X_s = k_s) = \begin{cases}
+        \frac{ n! }{ k_1! \cdots k_s! } p_1^{k_1} \cdots p_s^{k_s}, & \text{falls } k_i \in \N_0, \sum k_i = n\\
+        0, & \text{sonst}
+    \end{cases} \]
+\end{karte}
+
+\begin{karte}{Randverteilung der Multinomialverteilung}
+    Sei \( (X_1, \ldots, X_s) \sim \Mult(n;p_1,\ldots,p_s) \). 
+    Dann gilt für \( j\in [s] \)
+    \[ X_j \sim \Bin(n,p_j). \]
+\end{karte}
+
+\begin{karte}{Vergröberung bei Multinomialverteilung}
+    Sei \( (X_1,\ldots,X_s) \sim \Mult(n;p_1,\ldots,p_s) \). 
+    Ferner sei \( T_1,\ldots,T_l \) (\(l \geq 2\)) eine Zerlegung von \( [s] \).
+    Setze \( Y_r := \sum_{k\in T_r} X_k \quad r\in [l] \).
+    Dann gilt 
+    \[ (Y_1,\ldots,Y_l) \sim \Mult(n;q_1,\ldots,q_s), \] 
+    wobei \( q_r = \sum_{k\in T_r} p_k \).
+\end{karte}
+
+\begin{karte}{Kovarianz und Korrelation von \( \Mult(n;p_1,\ldots,p_s) \)}
+    Es sei \( (X_1,\ldots,X_s) \sim \Mult(n;p_1,\ldots,p_s) \). Dann gilt 
+    \begin{enumerate}
+        \item \( C(X_i, X_j) = -n p_i p_j \).
+        \item \( \rho(X_i, X_j) = -\sqrt{\frac{p_i p_j}{(1 - p_i)(1 - p_j)}}, \quad i \neq j, p_i<1, p_j < 1\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Mehrdimensionale hypergeometrische Verteilung}
+    Es sei eine Urne mit \( r_j \) Kugeln der Farbe \( j \in [s] \) 
+    \( n \)-maliges Ziehen ohne Zurücklegen. 
+    Sei \(X_j \) die Anzahl der gezogenen Kugeln des Typs \(j\). 
+    Die Verteilung von \( (X_1,\ldots,X_s) \) heißt mehrdimensionale hypergeometrische Verteilung.
+    Es gilt 
+    \[ \P(X_1 = k_1, \ldots, X_s = k_s) = \frac{\binom{r_1}{k_1} \cdots \binom{r_s}{k_s}}{\binom{r_1 + \cdots + r_s}{n}} \]
+    für \( (k_1,\ldots, k_s) \in \N_0^s \) mit \( \sum k_i = n \).\\
+    Falls das Ziehen mit Zurücklegen geschieht, so gilt 
+    \[ (X_1,\ldots, X_s) \sim \Mult(n;p_1,\ldots,p_s) \] 
+    mit \( p_i = \frac{r_i}{r_1 + \cdots + r_s}, \quad i \in [s] \).
+\end{karte}
