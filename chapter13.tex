@@ -1,0 +1,45 @@
+\section*{Wartezeitverteilung}
+
+\begin{karte}{Geometrische Verteilung}
+    Eine Zufallsvariable \( X \) mit Werten in \( \N_0 \)
+    hat eine geometrische Verteilung (\( X \sim \Geo(p) \)), falls 
+    \[ \P(X=k) = (1-p)^k p, \quad k\in\N_0. \]
+    Wenn \( X \sim \Geo(p) \) gilt, dann gilt auch 
+    \begin{enumerate}
+        \item \( \E X = \frac{1-p}{p} \).
+        \item \( V(X) = \frac{1-p}{p^2} \).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Gedächtnislosigkeit von \( \Geo(p) \)}
+    Für \( X \sim \Geo(p) \) gilt 
+    \[ \P(X = m+k \;|\; X \geq k ) = \P(X = m), \quad k,m\in\N_0. \tag{\(*\)} \]
+    Ist \( X \) eine \( \N_0 \)-wertige Zufallsvariable mit (\(*\)) 
+    und \( 0 < \P(X = 0) < 1 \), dann gilt \( X \sim \Geo(p) \) 
+    für ein \( p\in (0,1) \).
+\end{karte}
+
+\begin{karte}{Die negative Binomialverteilung}
+    Die Zufallsvariable \( X \) besitzt eine \textit{negative Binomialverteilung} 
+    mit Parametern \( r \) und \( p \) (\( r\in \N, 0<p<1 \)), schreibe 
+    \( X \sim \Nb(r,p) \), falls gilt: 
+    \[ \P(X = k) = \binom{k + r - 1}{k} p^r (1-p)^k, \quad k \in \N_0. \]
+    Falls \( X \sim \Nb(r,p) \), so gelten:
+    \begin{enumerate}
+        \item \( \E X = r \cdot \frac{1-p}{p} \).
+        \item \( V(X) = r \cdot \frac{1-p}{p^2} \)
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Negativer Binomialkoeffizient}
+    Es gilt 
+    \[ \binom{k+r-1}{k} = \frac{ (k + r - 1)\cdots (r + 1) r }{k!}
+    = (-1)^k \binom{-r}{k}. \]
+\end{karte}
+
+\begin{karte}{Additionsgesetz negative Binomialverteilung}
+    Es seien \( X \) und \(Y\) unabhängige Zufallsvariablen 
+    mit \( X \sim \Nb(r,p) \) und \( Y \sim \Nb(r,p) \). 
+    Dann gilt 
+    \[ X + Y \sim \Nb(r + s, p). \]
+\end{karte}

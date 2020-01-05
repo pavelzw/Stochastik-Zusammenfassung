@@ -1,0 +1,19 @@
+\section*{Poisson-Verteilung}
+
+\begin{karte}{Gesetz seltener Ereignisse}
+    Seien \( p_n \in [0,1], n\in\N \) mit 
+    \[ \limes{n} n p_n =: \lambda \in (0,\infty). \]
+    Dann gilt 
+    \[ \limes{n} \binom{n}{k} p_n^k (1 - p_n)^{n-k} 
+    = e^{-\lambda} \frac{\lambda^k}{k!}. \]
+\end{karte}
+
+\begin{karte}{Poisson-Verteilung}
+    Die Zufallsvariable \( X \) besitzt eine Poisson-Verteilung mit Parameter 
+    \( \lambda \in (0,\infty) \), kurz \( X \sim \Po(\lambda) \), falls gilt: 
+    \[ \P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!}, \quad k\in \N. \]
+    Wenn \( X \sim \Po(\lambda) \), dann gilt 
+    \( \E X = V(X) = \lambda \). Sind \( X \) und \( Y \) unabhängig mit 
+    \( X \sim \Po(\lambda), Y \sim \Po(\mu) \), so gilt 
+    \( X + Y \sim \Po(\lambda + \mu) \).
+\end{karte}
