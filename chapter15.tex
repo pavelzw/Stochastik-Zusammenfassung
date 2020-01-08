@@ -1,0 +1,60 @@
+\section*{Bedingte Erwartungswerte}
+
+\begin{karte}{Bedingter Erwartungswert}
+	Sei $(\Omega,\P)$ ein verallg. diskreter W-Raum mit Träger $\Omega_0$, $A \subset \Omega$ mit
+	 $\P(A) > 0$ und $\abb{X}{\Omega}{\R}$ eine Zufallsvariable mit $\E X < \infty$. Dann heißt
+	$$\E[X|A]:= \frac{1}{\P(A)}\sum_{\omega \in A \cap \Omega_0} X(\omega)\P(\set{\omega})$$
+	\textit{bedingter Erwartungswert von }$X$\textit{ unter }$A$. \\
+	Ist $\abb{Z}{\Omega}{\R^k}$, so heißt 
+	$$\E[X|Z=z] := \E[X|\set{Z=z}]$$
+	\textit{bedingter Erwartungswert von }$X$\textit{ unter der Bedingung }$Z=z$. \\
+	Es gilt:
+	$$\E[X|A]=\sum_{\omega \in \Omega_0} X(\omega) \P_A(\set{\omega}), \quad \P_A(\set{\omega}):= \begin{cases}
+	\frac{\P(\set{\omega})}{\P(A)} & \omega \in A \\
+	0 & \text{sonst}
+	\end{cases}$$
+\end{karte}
+
+\begin{karte}{Formel vom totalen Erwartungswert}
+	Es gelte $\displaystyle \Omega = \bigcup_{j=1}^{\infty} A_j$ mit $A_j \subset \Omega$, $A_i \cap A_j = \emptyset$
+	 für $i \neq j$. Dann gilt:
+	$$\E X = \sum_{j=1}^{\infty} \E[X|A_j]\P(A_j)$$
+\end{karte}
+
+\begin{karte}{Eigenschaften des bedingten Erwartungswerts}
+	Es gelte $\E \abs{X} < \infty$, $\E \abs{Y} < \infty$, $\P(A) > 0$, $abb{Z}{\Omega}{\R^k}$, $z \in \R^k$, 
+	$\P(Z=z) > 0$, $a \in \R$. Dann folgt:
+	\begin{itemize}
+		\item $\E[X+Y|A]=\E[X|A]+ \E[Y|A]$
+		\item $\E[a \cdot X|A] = a \cdot \E[X|A]$
+		\item $X \leq Y \quad \Rightarrow \quad \E[X|A] \leq \E[Y|A]$
+		\item $\E[\1_B|A]= \P(B|A)$
+		\item $\displaystyle \E[X|A]= \sum_{j=1}^{\infty} \P(X=x_j|A) \quad$ 
+		falls $\displaystyle \bigcup_{j=1}^{\infty} \set{x_j} = X(\Omega)$
+		\item $\displaystyle \E[X|Z=z]= \sum_{j=1}^{\infty} \P(X=x_j|Z=z) \quad$ 
+		falls $\displaystyle \bigcup_{j=1}^{\infty} \set{x_j} = X(\Omega)$
+		\item $\E[X|Z=z]=\E X \quad$ falls $X$ und $Z$ unabhängig sind
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Die Substitutionsregel}
+	Seien $\abb{X}{\Omega}{\R^n}$, $\abb{Z}{\Omega}{\R^k}$, $\abb{g}{\R^n \times \R^k}{\R}$ 
+	mit $\E \abs{g(X,Z)} < \infty$. Dann gilt
+	$$\E[g(X,Z)|Z=z]=\E[g(X,z)|Z=z].$$
+\end{karte}
+
+\begin{karte}{Bedingte Erwartung}
+	Es sei $\abb{Z}{\Omega}{\R^k}$ mit $\sum_{j \geq 1} \P(Z=z_j) = 1$. Es sei $X \in L^1(\P)$. 
+	Dann heißt die durch
+	$$\E[X|Z](\omega) := \begin{cases}
+	\E[X|Z=Z(\omega)] & \text{falls } Z(\omega) \in \set{z_1,z_2,\dotsc} \\
+	0 & \text{sonst}
+	\end{cases}$$
+	definierte Abbildung $\omega \mapsto \E[X|Z](\omega)$ bedingte Erwartung von $X$ bei gegebenem $Z$.
+\end{karte}
+
+\begin{karte}{Mittlere quadratische Abweichung}
+	Seien $\E X^2 < \infty$, $\abb{Z}{\Omega}{\R^k}$  mit $\sum_{j \geq 1} \P(Z=z_j) = 1$,
+	 $\abb{h}{\R^k}{\R}$ mit $\E [h(Z)^2] < \infty$, dann wird die \textit{mittlere quadratische Abweichung} 
+	$$ \E(X-h(Z))^2$$ minimal für $h(Z)=\E[X|Z]$ bzw. für die Funktion $h(z)=\E[X|Z=z]$.
+\end{karte}

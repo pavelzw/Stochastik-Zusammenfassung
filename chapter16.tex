@@ -1,0 +1,24 @@
+\section*{Erzeugende Funktionen}
+
+\begin{karte}{Erzeugende Funktion}
+	Es sei $X$ eine $\N_0$-wertige ZV. Die durch 
+	$$ g_X(t):= \sum_{k=0}^{\infty} \P(X=k) t^k, \quad t \in \R$$
+	definierte Funktion heißt \textit{erzeugende Funktion von} $X$ (bzw. $\P^X$). \\
+	\textbf{Bemerkungen:}
+	\begin{itemize}
+		\item Es gilt $g_X(1)=1$, der Konvergenzradius von $g_X$ ist also mindestens $1$.
+		\item Es ist $g_X(t)=\E[t^X]$.
+		\item Die Funktion $g_X$ legt die Verteilung von $X$ eindeutig fest (Identitätssatz für Potenzreihen).
+	\end{itemize}
+\end{karte}
+
+\begin{karte}{Multiplikationssatz}
+	Seien $X,Y$ unabhängige, $\N_0$-wertige ZVen. Dann gilt:
+	$$ g_{X+Y}(t) = g_X(t) \cdot g_Y(t) \quad \forall t \in \R.$$
+\end{karte}
+
+\begin{karte}{Erwartungswerte der faktoriellen Momente}
+	Sei $X$ eine $\N_0$-wertige ZV. Dann ist für $r\in \N$ die ZV $X(X-1)\cdots(X-r+1)$ genau dann integrierbar, 
+	wenn $g^{(r)}(1-):= \lim\limits_{r \uparrow 1} g^{(r)}(t)$ existiert. In diesem Fall gilt:
+	$$ \E[X(X-1)\cdots(X-r+1)]=g^{(r)}(1-).$$
+\end{karte}
