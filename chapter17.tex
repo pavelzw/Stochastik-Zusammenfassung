@@ -9,10 +9,12 @@
 
 \begin{karte}{Stochastische Konvergenz}
 	Seien $Y_1,\dotsc ,Y_n$ Zufallsvariablen und $a \in \R$.
-	$$ Y \plim{\P}{n \to \infty} a \quad :\Leftrightarrow \quad \lim\limits_{n \to \infty} \P(\abs{Y_n-a}\geq \varepsilon) = 0 \quad \forall \varepsilon > 0$$
+	$$ Y \plim{\P}{n \to \infty} a \quad :\Leftrightarrow \quad \lim\limits_{n \to \infty} 
+	\P(\abs{Y_n-a}\geq \varepsilon) = 0 \quad \forall \varepsilon > 0$$
 	Man nennt dies \textit{Konvergenz in Wahrscheinlichkeit} bzw. \textit{stochastische Konvergenz}.
 	Ist $Y$ eine weitere ZV, so schreibt man:
-	$$ Y \oversett{$\P$}{\undersett{$n \to \infty$}{\longrightarrow}} Y \quad :\Leftrightarrow \quad \lim\limits_{n \to \infty} \P(\abs{Y_n-Y}\geq \varepsilon) = 0 \quad \forall \varepsilon > 0.$$
+	$$ Y \oversett{$\P$}{\undersett{$n \to \infty$}{\longrightarrow}} Y \quad :\Leftrightarrow 
+	\quad \lim\limits_{n \to \infty} \P(\abs{Y_n-Y}\geq \varepsilon) = 0 \quad \forall \varepsilon > 0.$$
 \end{karte}
 
 \begin{karte}{Schwaches Gesetz großer Zahlen von Jakob Bernoulli}
@@ -21,7 +23,8 @@
 \end{karte}
 
 \begin{karte}{Motivation des zentralen Grenzwertsatzes}
-	Sei $p \in (0,1)$. Ferner seien $X_1,X_2,\dotsc$ unabhängige $\Bin(1,p)$-verteilte Zufallsvariablen. Sei $S_n := \sum_{j=1}^{n}X_j, j \in \N$. \\
+	Sei $p \in (0,1)$. Ferner seien $X_1,X_2,\dotsc$ unabhängige $\Bin(1,p)$-verteilte Zufallsvariablen. 
+	Sei $S_n := \sum_{j=1}^{n}X_j, j \in \N$. \\
 	\textbf{Frage:} Wie stark schwankt $S_n$ um den Erwartungswert $np$? \\
 	Es gilt für eine reelle Zahlenfolge $(a_n)_{n \in \N}$:
 	$$ \lim\limits_{n \to \infty}\P(\abs{S_n-np} \leq a_n) = \begin{cases}
@@ -32,15 +35,20 @@
 
 \begin{karte}{Stirlingsche Formel}
 	Für $n \in \N$ gilt:
-	$$ n! = \sqrt{2\pi n}\cdot n^n \cdot (1+R(n)) \quad \text{ mit } \quad 0 \leq R(n) \oversett{$n \to \infty$}{\longrightarrow} 0.$$
-	Insbesondere gilt $n! \sim \sqrt{2\pi n}\cdot n^n \cdot$, wobei $a_n \sim b_n :\Leftrightarrow \lim\limits_{n \to \infty}\frac{a_n}{b_n} = 1$.
+	$$ n! = \sqrt{2\pi n}\cdot n^n \cdot (1+R(n)) \quad \text{ mit } \quad 0 \leq R(n)
+	 \oversett{$n \to \infty$}{\longrightarrow} 0.$$
+	Insbesondere gilt $n! \sim \sqrt{2\pi n}\cdot n^n \cdot$, wobei $a_n \sim b_n :\Leftrightarrow 
+	\lim\limits_{n \to \infty}\frac{a_n}{b_n} = 1$.
 \end{karte}
 
 \begin{karte}{Normalverteilung}
 	\begin{itemize}
-		\item Sei $$\abb{\varphi}{\R}{\R}, x \mapsto \frac{1}{2\pi}\mathrm{e}^{-\frac{x^2}{2}}.$$ $\varphi$ heißt \textit{Dichte der standardisierten Normalverteilung} oder \textit{Gaußsche Glockenkurve}. 
-		\item Setze $$\abb{\phi}{\R}{\R}, x \mapsto \int_{-\infty}^{x} \varphi(t) \; \mathrm{d}t.$$ $\phi$ heißt \textit{Verteilungsfunktion} der standardisierten Normalverteilung.
-		\item Es gilt: $ \displaystyle \int_{-\infty}^{\infty} \varphi(t) \; \mathrm{d}t = 1$, $\phi(x)+\phi(-x)=1$.
+		\item Sei $$\abb{\varphi}{\R}{\R}, x \mapsto \frac{1}{2\pi}\mathrm{e}^{-\frac{x^2}{2}}.$$ $\varphi$
+		 heißt \textit{Dichte der standardisierten Normalverteilung} oder \textit{Gaußsche Glockenkurve}. 
+		\item Setze $$\abb{\phi}{\R}{\R}, x \mapsto \int_{-\infty}^{x} \varphi(t) \; \mathrm{d}t.$$ $\phi$
+		 heißt \textit{Verteilungsfunktion} der standardisierten Normalverteilung.
+		\item Es gilt: $ \displaystyle \int_{-\infty}^{\infty} \varphi(t) \; \mathrm{d}t = 1$,
+		 $\phi(x)+\phi(-x)=1$.
 	\end{itemize}
 \end{karte}
 
@@ -53,7 +61,9 @@
 \end{karte}
 
 \begin{karte}{Zentraler Grenzwertsatz von Lindeberg-Lévy}
-	Seien $X_1,X_2,\dotsc$ unabhängige ZVen mit gleicher Verteilung, wobei $\E X_1 < \infty$. Sei $\mu := \E X_1, 0 < \sigma^2 := V(X_1), S_n := \sum_{j=1}^{n} X_j$, $$S_n^\ast := \frac{S_n-n\mu}{n\sigma^2} = \frac{S_n-\E S_n}{\sqrt{V(S_n)}}.$$
+	Seien $X_1,X_2,\dotsc$ unabhängige ZVen mit gleicher Verteilung, wobei $\E X_1 < \infty$. 
+	Sei $\mu := \E X_1, 0 < \sigma^2 := V(X_1), S_n := \sum_{j=1}^{n} X_j$, 
+	$$S_n^\ast := \frac{S_n-n\mu}{n\sigma^2} = \frac{S_n-\E S_n}{\sqrt{V(S_n)}}.$$
 	Dann gelten:
 	\begin{itemize}
 		\item $\displaystyle \lim\limits_{n \to \infty} \P(a \leq S_n^\ast \leq b) = \phi(b)-\phi(a), \quad a,b \in \R$
