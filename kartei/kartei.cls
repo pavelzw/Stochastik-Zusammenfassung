@@ -130,7 +130,7 @@
 \PassOptionsToClass{twoside}{scrartcl}% 
 \PassOptionsToClass{cleardoublepage=plain,DIV=calc}{scrartcl}% 
 \LoadClass{scrartcl}
-\RequirePackage[headsepline]{scrpage2}
+\RequirePackage[headsepline]{scrlayer-scrpage}
 \RequirePackage{xargs}
 \RequirePackage[landscape]{geometry}
 \RequirePackage{pgfpages,tikz}
